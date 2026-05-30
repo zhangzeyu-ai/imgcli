@@ -1,0 +1,66 @@
+# imgcli — 批量图片处理工具
+
+一行命令搞定图片压缩、格式转换、添加水印、批量重命名。
+
+## 使用方法
+
+把 `imgcli.exe` 放到任意目录，打开 cmd（命令提示符）运行：
+
+```
+imgcli.exe 命令 [选项] 图片目录
+```
+
+所有命令都支持：
+- `-o` 指定输出目录（默认 `_output`）
+- `-r` 递归处理子目录
+- `--dry-run` 预览模式
+
+---
+
+### 1️⃣ 压缩图片
+
+```
+imgcli.exe compress -q 70 D:\照片
+imgcli.exe compress --max-size 500000 D:\照片
+imgcli.exe compress --max-width 1920 --max-height 1080 D:\照片
+```
+
+### 2️⃣ 格式转换
+
+```
+imgcli.exe convert -f png D:\照片
+imgcli.exe convert -f webp -q 80 D:\照片
+```
+
+支持：jpg, png, webp, bmp, tiff, avif
+
+### 3️⃣ 添加水印
+
+```
+imgcli.exe watermark text -t "© 我的水印" D:\照片
+imgcli.exe watermark image -w logo.png D:\照片
+imgcli.exe watermark image -w logo.png -p tile D:\照片
+```
+
+### 4️⃣ 批量重命名
+
+```
+imgcli.exe rename counter -p photo D:\照片    → photo001.jpg ...
+imgcli.exe rename sanitize D:\照片             → 清理特殊字符
+```
+
+---
+
+## 效果
+
+- 压缩：800KB → 50KB（质量 50），肉眼几乎无区别
+- 转换：jpg 转 png 无损，转 webp 体积缩小 70%
+- 水印：支持自定义文字/图片、位置、透明度、平铺
+
+## 系统要求
+
+Windows 7 / 10 / 11，双击或 cmd 运行。
+
+## 售后
+
+购买后有任何问题直接联系，终身免费升级。

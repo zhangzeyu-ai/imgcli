@@ -1,3 +1,4 @@
+import os
 from PIL import Image
 
 
@@ -29,6 +30,3 @@ def compress_max_dimensions(image_path, output_path, max_width, max_height, qual
     img = Image.open(image_path)
     img.thumbnail((max_width, max_height), Image.LANCZOS)
     img.save(output_path, quality=quality, optimize=True)
-
-
-import os
